@@ -8,13 +8,9 @@
           <th><a href="#" v-on:click="nextMonth">Next</a></th>
         </tr>
         <tr>
-          <th>Mon</th>
-          <th>Tue</th>
-          <th>Wed</th>
-          <th>Thu</th>
-          <th>Fri</th>
-          <th>Sat</th>
-          <th>Sun</th>
+          <th v-for="week in weeks">
+            {{week}}
+          </th>
         </tr>
       </thead>
       <tbody data-bind="foreach:gridArray">
@@ -30,6 +26,14 @@
 
 <script>
 export default {
+  props: {
+    weeks: {
+      type: Array,
+      default: () => {
+        return ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+      }
+    }
+  },
   data () {
     return {
       selectedMonth: new Date()
