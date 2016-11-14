@@ -7527,7 +7527,7 @@ return Vue$3;
 })));
 });
 
-var App = {render: function(){with(this){return _h('div',{staticClass:"calendar"},[_h('table',[_h('thead',[_h('tr',[_h('th',[_h('a',{attrs:{"href":"#"},on:{"click":previousMonth}},["Prev"])]),_m(0),_h('th',[_h('a',{attrs:{"href":"#"},on:{"click":nextMonth}},["Next"])])]),_h('tr',[_l((weeks),function(week){return _h('th',[_s(week)])})])]),_h('tbody',{attrs:{"data-bind":"foreach:gridArray"}},[_l((gridArray),function(item){return _h('tr',[_l((item),function(data){return _h('td',[_s(data.getDate())])})])})])])])}},staticRenderFns: [function(){with(this){return _h('th',{attrs:{"colspan":"5"}})}}],
+var App = {render: function(){with(this){return _h('div',{staticClass:"calendar"},[_h('div',{staticClass:"calendar-container"},[_h('div',{staticClass:"calendar-toolbar"},[_h('button',{on:{"click":previousMonth}},["Prev"]),_m(0),_h('button',{on:{"click":nextMonth}},["Next"])]),_h('div',{staticClass:"calendar-week"},[_l((weeks),function(week){return _h('span',[_s(week)])})]),_h('div',{staticClass:"calendar-monthday"},[_h('div',{staticClass:"calendar-slide"},[_h('div',{staticClass:"calendar-content",attrs:{"data-bind":"foreach:gridArray"}},[_l((gridArray),function(monthday){return _h('div',{staticClass:"calendar-row"},[_l((monthday),function(day){return _h('div',{staticClass:"calendar-cell"},[_s(day.getDate())])})])})])])])])])}},staticRenderFns: [function(){with(this){return _h('div',{staticClass:"calendar-toolbar-title"})}}],
   props: {
     weeks: {
       type: Array,

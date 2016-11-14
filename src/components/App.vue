@@ -1,6 +1,25 @@
 <template>
   <div class="calendar">
-    <table>
+    <div class="calendar-container">
+      <div class="calendar-toolbar">
+        <button @click="previousMonth">Prev</button>
+        <div class="calendar-toolbar-title"></div>
+        <button @click="nextMonth">Next</button>
+      </div>
+      <div class="calendar-week">
+        <span v-for="week in weeks">{{week}}</span>
+      </div>
+      <div class="calendar-monthday">
+        <div class="calendar-slide">
+          <div class="calendar-content" data-bind="foreach:gridArray">
+            <div class="calendar-row" v-for="monthday in gridArray">
+              <div class="calendar-cell" v-for="day in monthday">{{day.getDate()}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <table>
       <thead>
         <tr>
           <th><a href="#" v-on:click="previousMonth">Prev</a></th>
@@ -20,7 +39,7 @@
           </td>
         </tr>
       </tbody>
-    </table>
+    </table> -->
   </div>
 </template>
 
@@ -91,12 +110,38 @@ export default {
 </script>
 
 <style>
-.calendar table {
-  border-collapse: collapse;
+.calendar {
+  width: 310px;
+  display: flex;
+  flex-direction: column;
 }
 
-.calendar table th,
-.calendar table td {
-  text-align: center;
+.calendar-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.calendar-toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.calendar-week {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.calendar-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.calendar-cell {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 </style>

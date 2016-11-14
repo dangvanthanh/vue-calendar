@@ -1,9 +1,35 @@
 
-.calendar table {
-  border-collapse: collapse;
+.calendar {
+  width: 310px;
+  display: flex;
+  flex-direction: column;
 }
 
-.calendar table th,
-.calendar table td {
-  text-align: center;
+.calendar-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.calendar-toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.calendar-week {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.calendar-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.calendar-cell {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
